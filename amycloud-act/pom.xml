@@ -3,16 +3,16 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.amy.cloud</groupId>
-		<version/>
-		<artifactId>amycloud</artifactId>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.7.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-
-	<artifactId>amycloud-eureka</artifactId>
-	<packaging>jar</packaging>
+	<groupId>com.amy.cloud</groupId>
+	<artifactId>amycloud-act</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>amycloud-eureka</name>
-	<description>eureka 服务注册中心</description>
+	<name>amycloud-act</name>
+	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -20,12 +20,19 @@
 	</properties>
 
 	<dependencies>
-		<!--服务中心-->
+		<!--eureka 客户端-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
-	</dependencies>
+		<!--web 模块-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
 	<dependencyManagement>
 		<dependencies>

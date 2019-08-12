@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8a64379-8d0d-4bd5-b5f5-37d5904d7d1b" name="Default Changelist" comment="" />
+    <list default="true" id="e8a64379-8d0d-4bd5-b5f5-37d5904d7d1b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/amycloud-act/src/main/java/com/amy/cloud/amycloudact/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amycloud-eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/amycloud-eureka/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amycloud-eureka/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/amycloud-eureka/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/amycloud-eureka/target/" />
+    <ignored path="$PROJECT_DIR$/amycloud-act/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,42 +23,43 @@
     <session id="-524737203">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
-          <entry key="java" value="5" />
-          <entry key="properties" value="2" />
-          <entry key="xml" value="6" />
-          <entry key="yml" value="10" />
+          <entry key="java" value="23" />
+          <entry key="properties" value="3" />
+          <entry key="xml" value="21" />
+          <entry key="yml" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="5" />
-          <entry key="Properties" value="2" />
-          <entry key="XML" value="6" />
-          <entry key="YAML" value="10" />
+          <entry key="JAVA" value="23" />
+          <entry key="Properties" value="3" />
+          <entry key="XML" value="21" />
+          <entry key="YAML" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="25" />
-          <entry key="xml" value="59" />
-          <entry key="yml" value="172" />
+          <entry key="java" value="89" />
+          <entry key="xml" value="112" />
+          <entry key="yml" value="452" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="25" />
-          <entry key="XML" value="59" />
-          <entry key="YAML" value="172" />
+          <entry key="JAVA" value="89" />
+          <entry key="XML" value="112" />
+          <entry key="YAML" value="452" />
         </counts>
       </usages-collector>
     </session>
@@ -57,23 +67,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/amycloud-eureka/src/main/resources/bootstrap.yml">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+            <state relative-caret-position="272">
+              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/amycloud-eureka/src/main/java/com/amy/cloud/amycloudeureka/AmycloudEurekaApplication.java" />
-        <option value="$PROJECT_DIR$/amycloud-eureka/pom.xml" />
         <option value="$PROJECT_DIR$/amycloud-eureka/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/amycloud-act/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/amycloud-act/src/main/java/com/amy/cloud/amycloudact/AmycloudActApplication.java" />
+        <option value="$PROJECT_DIR$/amycloud-act/src/main/java/com/amy/cloud/amycloudact/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/amycloud-eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/amycloud-act/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -91,8 +115,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -108,6 +133,7 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -119,6 +145,66 @@
             <path>
               <item name="amycloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="amycloud" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="amycloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="amycloud" type="462c0819:PsiDirectoryNode" />
+              <item name="amycloud-act" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="amycloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="amycloud" type="462c0819:PsiDirectoryNode" />
+              <item name="amycloud-act" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="amycloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="amycloud" type="462c0819:PsiDirectoryNode" />
+              <item name="amycloud-act" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="amycloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="amycloud" type="462c0819:PsiDirectoryNode" />
+              <item name="amycloud-act" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="amycloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="amycloud" type="462c0819:PsiDirectoryNode" />
+              <item name="amycloud-act" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="amycloudact" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="amycloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="amycloud" type="462c0819:PsiDirectoryNode" />
+              <item name="amycloud-act" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="amycloudact" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="amycloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="amycloud" type="462c0819:PsiDirectoryNode" />
+              <item name="amycloud-act" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="amycloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="amycloud" type="462c0819:PsiDirectoryNode" />
+              <item name="amycloud-act" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="amycloud" type="b2602c69:ProjectViewProjectNode" />
@@ -159,9 +245,7 @@
               <item name="amycloud" type="b2602c69:ProjectViewProjectNode" />
               <item name="amycloud" type="462c0819:PsiDirectoryNode" />
               <item name="amycloud-eureka" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -178,7 +262,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565341383908" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565608148154" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -188,6 +272,11 @@
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
     <option name="ruleStates">
       <list>
         <RuleState>
@@ -199,7 +288,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.AmycloudEurekaApplication">
+    <configuration name="AmycloudActApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="amycloud-act" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.amy.cloud.amycloudact.AmycloudActApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AmycloudEurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="amycloud-eureka" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.amy.cloud.amycloudeureka.AmycloudEurekaApplication" />
@@ -207,6 +303,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.AmycloudEurekaApplication" />
+      <item itemvalue="Spring Boot.AmycloudActApplication" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -219,18 +319,20 @@
       <option name="presentableId" value="Default" />
       <updated>1565319441456</updated>
       <workItem from="1565319445357" duration="8429000" />
-      <workItem from="1565435672711" duration="87000" />
+      <workItem from="1565435672711" duration="1035000" />
+      <workItem from="1565572319776" duration="9000" />
+      <workItem from="1565579775585" duration="6493000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8516000" />
+    <option name="totallyTimeSpent" value="15966000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26037195" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -238,6 +340,7 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Run Dashboard" visible="true" weight="0.32961586" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32961586" />
@@ -246,7 +349,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32961586" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32961586" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32961586" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32961586" />
@@ -271,13 +374,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-netflix-eureka-client/2.1.2.RELEASE/spring-cloud-netflix-eureka-client-2.1.2.RELEASE.jar!/org/springframework/cloud/netflix/eureka/EurekaInstanceConfigBean.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -285,24 +381,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/amycloud-eureka/src/main/java/com/amy/cloud/amycloudeureka/AmycloudEurekaApplication.java">
+    <entry file="file://$PROJECT_DIR$/amycloud-eureka/src/test/java/com/amy/cloud/amycloudeureka/AmycloudEurekaApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        <state relative-caret-position="204">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/amycloud-eureka/pom.xml">
+    <entry file="file://$PROJECT_DIR$/amycloud-eureka/src/main/java/com/amy/cloud/amycloudeureka/AmycloudEurekaApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="31" />
+        <state relative-caret-position="187">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/amycloud-eureka/src/main/resources/bootstrap.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        <state relative-caret-position="17">
+          <caret line="1" column="12" lean-forward="true" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amycloud-act/src/main/java/com/amy/cloud/amycloudact/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="17" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amycloud-act/src/main/java/com/amy/cloud/amycloudact/AmycloudActApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amycloud-act/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="18" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amycloud-eureka/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amycloud-act/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -323,7 +461,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited>Spring</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -358,7 +496,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>amycloud-eureka</last-edited>
+          <last-edited>amycloud-act</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -383,6 +521,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -1,0 +1,19 @@
+server:
+  port: 7000
+# 注册中心配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${registry.host}:${registry.port}/eureka/
+  instance:
+    prefer-ip-address: true #以IP地址注册到服务中心
+# 注册中心配置参数
+registry:
+  host: localhost
+  port: 6050
+# 服务
+spring:
+  application:
+    name: amycloud-act
+  profiles:
+    active: dev
