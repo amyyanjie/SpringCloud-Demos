@@ -8,5 +8,7 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://${register.host}:${server.port}/eureka/
+  server:
+    enable-self-preservation: false # 自我保护模式，缺省为打开
 register:
   host: localhost
