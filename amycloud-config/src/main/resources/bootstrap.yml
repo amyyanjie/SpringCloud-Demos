@@ -1,6 +1,7 @@
 server:
   port: 7050
 # 注册中心配置
+
 eureka:
   client:
     service-url:
