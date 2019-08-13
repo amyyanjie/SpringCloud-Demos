@@ -11,6 +11,7 @@
     <modules>
         <module>amycloud-eureka</module>
         <module>amycloud-act</module>
+        <module>amycloud-config</module>
     </modules>
 
 </project>

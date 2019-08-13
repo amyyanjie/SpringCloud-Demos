@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="amycloud" />
         <module name="amycloud-act" />
+        <module name="amycloud-config" />
         <module name="amycloud-eureka" />
       </profile>
     </annotationProcessing>
