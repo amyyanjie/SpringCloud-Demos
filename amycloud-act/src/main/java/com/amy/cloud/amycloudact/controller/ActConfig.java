@@ -8,10 +8,10 @@ import org.springframework.stereotype.Component;
  * @Description:
  * @Date: 2019/08/13 17:40
  */
-//@Component
-//public class ActConfig {
-//    @Value("${springFestival.startTime}")
-//    public String startTime;
-//    @Value("${springFestival.endTime}")
-//    public String endTime;
-//}
+@Component
+public class ActConfig {
+    @Value("${springFestival.startTime}")
+    public String startTime;
+    @Value("${springFestival.endTime}")
+    public String endTime;
+}

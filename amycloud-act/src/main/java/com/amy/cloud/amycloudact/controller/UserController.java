@@ -1,6 +1,6 @@
 package com.amy.cloud.amycloudact.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,12 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
  * @Date: 2019/08/12 19:04
  */
 @RestController
+@Slf4j
 public class UserController {
+    @Value("${springFestival.startTime}")
+    public String startTime;
 
 
     @GetMapping("/user/time")
     public String getTime() {
-        return null;
+        log.info("startTime:"+startTime);
+        return startTime;
     }
 
 }
