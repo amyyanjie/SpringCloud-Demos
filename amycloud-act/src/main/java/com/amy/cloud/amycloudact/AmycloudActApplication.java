@@ -3,13 +3,27 @@ package com.amy.cloud.amycloudact;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.context.ApplicationContext;
+import org.springframework.core.env.Environment;
 
 @SpringBootApplication
 @EnableDiscoveryClient
 public class AmycloudActApplication {
+    private static ApplicationContext context;
 
-	public static void main(String[] args) {
-		SpringApplication.run(AmycloudActApplication.class, args);
-	}
+    private static Environment env;
+
+    public static void main(String[] args) {
+        context = SpringApplication.run(AmycloudActApplication.class, args);
+        env = context.getEnvironment();
+    }
+
+    public static ApplicationContext getContext() {
+        return context;
+    }
+
+    public static Environment getEnv() {
+        return env;
+    }
 
 }

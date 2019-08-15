@@ -1,6 +1,7 @@
 package com.amy.cloud.amycloudact.controller;
 
-import org.springframework.beans.factory.annotation.Value;
+import lombok.Data;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
@@ -9,9 +10,15 @@ import org.springframework.stereotype.Component;
  * @Date: 2019/08/13 17:40
  */
 @Component
+@Data
+@ConfigurationProperties
 public class ActConfig {
-    @Value("${springFestival.startTime}")
-    public String startTime;
-    @Value("${springFestival.endTime}")
-    public String endTime;
+    private SpringFestival springFestival;
+    @Data
+    public static class SpringFestival{
+        public String endTime;
+        public String startTime;
+
+    }
+
 }
