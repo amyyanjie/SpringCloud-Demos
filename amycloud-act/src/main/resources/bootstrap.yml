@@ -25,3 +25,9 @@ spring:
       discovery:
         enabled: true
         service-id: amycloud-config
+# 引用监控限制内容Map <Key String>
+info:
+  artifact : com.amy.cloud
+  name: ${spring.application.name}
+  description: act服务接口
+  version : V1.0

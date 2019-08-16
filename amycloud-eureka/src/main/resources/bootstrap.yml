@@ -12,3 +12,25 @@ eureka:
     enable-self-preservation: false # 自我保护模式，缺省为打开
 register:
   host: localhost
+
+spring:
+  application:
+    name: amycloud-eureka
+  profiles:
+    active: dev
+# 打开部分监控点 management.endpoints.web.exposure.exclude=beans,trace,env
+# 打开所有的监控点：
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+#  endpoint:
+#    health:
+#      enabled: false #关闭健康检查
+# 引用监控限制内容Map <Key String>
+info:
+  artifact : com.amy.cloud
+  name: ${spring.application.name}
+  description: 注册中心
+  version : V1.0

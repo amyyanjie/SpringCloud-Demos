@@ -1,7 +1,6 @@
 server:
   port: 7050
 # 注册中心配置
-
 eureka:
   client:
     service-url:
@@ -23,4 +22,16 @@ spring:
       server:
         native: # 目前就本地分支，无需git存储
           search-locations: classpath:/config/ # 此处是查找/config下配置文件
-
+# 打开部分监控点 management.endpoints.web.exposure.exclude=beans,trace,env
+# 打开所有的监控点：
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+# 引用监控限制内容Map <Key String>
+info:
+  artifact : com.amy.cloud
+  name: ${spring.application.name}
+  description: 配置中心
+  version : V1.0
