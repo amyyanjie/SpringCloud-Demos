@@ -1,16 +1,21 @@
 server:
   port: 7000
+
 # 注册中心配置
 eureka:
   client:
     service-url:
-      defaultZone: http://${registry.host}:${registry.port}/eureka/ # 指定服务注册中心地址
+      defaultZone: http://${registry.username}:${registry.password}@${registry.host}:${registry.port}/eureka/ # 指定服务注册中心地址
   instance:
     prefer-ip-address: true # 以IP地址注册到服务中心
+
 # 注册中心配置参数
 registry:
   host: localhost
   port: 6050
+  username: amy
+  password: amyRegister
+
 # 服务
 spring:
   application:
@@ -25,6 +30,7 @@ spring:
       discovery:
         enabled: true
         service-id: amycloud-config
+
 # 引用监控限制内容Map <Key String>
 info:
   artifact : com.amy.cloud

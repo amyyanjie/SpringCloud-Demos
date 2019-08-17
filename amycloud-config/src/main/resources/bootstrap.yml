@@ -1,16 +1,23 @@
 server:
   port: 7050
+
 # 注册中心配置
 eureka:
   client:
     service-url:
-      defaultZone: http://${registry.host}:${registry.port}/eureka/ # 指定服务注册中心地址
+      defaultZone: http:localhost:6050/eureka/
+#      defaultZone: http://${registry.username}:${registry.password}@${registry.host}:${registry.port}/eureka/ # 指定服务注册中心地址
   instance:
     prefer-ip-address: true # 以IP地址注册到服务中心
+
 # 注册中心配置参数
 registry:
   host: localhost
   port: 6050
+  username: amy
+  password: amyRegister
+
+
 # 服务
 spring:
   application:
@@ -22,6 +29,7 @@ spring:
       server:
         native: # 目前就本地分支，无需git存储
           search-locations: classpath:/config/ # 此处是查找/config下配置文件
+
 # 打开部分监控点 management.endpoints.web.exposure.exclude=beans,trace,env
 # 打开所有的监控点：
 management:
@@ -29,6 +37,7 @@ management:
     web:
       exposure:
         include: '*'
+
 # 引用监控限制内容Map <Key String>
 info:
   artifact : com.amy.cloud
