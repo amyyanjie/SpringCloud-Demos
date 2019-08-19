@@ -8,20 +8,21 @@ eureka:
     register-with-eureka: false # 禁止该服务注册中心将自己作为客户端来注册
     fetch-registry: false
     service-url:
-      defaultZone: http://localhost:6050/eureka/
-#      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${register.host}:${server.port}/eureka/
+      #      defaultZone: http://amy:amyRegister@localhost:6050/eureka/
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${register.host}:${server.port}/eureka/
   server:
-    enable-self-preservation: true # 自我保护模式，缺省为打开
+    enable-self-preservation: false # 自我保护模式，缺省为打开
 
 spring:
   application:
     name: amycloud-eureka
   profiles:
     active: dev
-#  security:
-#    user:
-#      name: amy
-#      password: amyRegister
+  security:
+    user:
+      name: amy
+      password: amyRegister
+
 
 
 # 打开部分监控点 management.endpoints.web.exposure.exclude=beans,trace,env
@@ -37,10 +38,12 @@ management:
 
 # 引用监控限制内容Map <Key String>
 info:
-  artifact : com.amy.cloud
+  artifact: com.amy.cloud
   name: ${spring.application.name}
   description: 注册中心
-  version : V1.0
+  version: V1.0
 
 register:
   host: localhost
+
+

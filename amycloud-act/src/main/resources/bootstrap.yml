@@ -5,6 +5,7 @@ server:
 eureka:
   client:
     service-url:
+      #      defaultZone: http://amy:amyRegister@localhost:6050/eureka
       defaultZone: http://${registry.username}:${registry.password}@${registry.host}:${registry.port}/eureka/ # 指定服务注册中心地址
   instance:
     prefer-ip-address: true # 以IP地址注册到服务中心
@@ -33,7 +34,7 @@ spring:
 
 # 引用监控限制内容Map <Key String>
 info:
-  artifact : com.amy.cloud
+  artifact: com.amy.cloud
   name: ${spring.application.name}
   description: act服务接口
-  version : V1.0
+  version: V1.0
