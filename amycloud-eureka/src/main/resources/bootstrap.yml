@@ -8,10 +8,10 @@ eureka:
     register-with-eureka: false # 禁止该服务注册中心将自己作为客户端来注册
     fetch-registry: false
     service-url:
-      defaultZone: http:localhost:6050/eureka/
+      defaultZone: http://localhost:6050/eureka/
 #      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${register.host}:${server.port}/eureka/
   server:
-    enable-self-preservation: false # 自我保护模式，缺省为打开
+    enable-self-preservation: true # 自我保护模式，缺省为打开
 
 spring:
   application:
