@@ -21,7 +21,6 @@ log/
 *.ipr
 *.mvn
 mvnw.cmd
-.gitignore
 
 ### NetBeans ###
 nbproject/private/
@@ -30,9 +29,4 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
-amycloud-monitor/.mvn/
-amycloud-monitor/mvnw
-amycloud-monitor/mvnw.cmd
-amycloud-monitor/pom.xml
-amycloud-monitor/src/
-amycloud-monitor/web/
+
