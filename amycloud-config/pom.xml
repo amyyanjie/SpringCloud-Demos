@@ -13,7 +13,7 @@
 	<description>配置中心-config</description>
 
 	<dependencies>
-		<!--config-->
+		<!--config服务端-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-server</artifactId>

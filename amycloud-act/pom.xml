@@ -21,7 +21,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
-            <version>1.4.2.RELEASE</version>
+            <version>${spring-cloud-config.version}</version>
         </dependency>
         <!--web 模块-->
         <dependency>

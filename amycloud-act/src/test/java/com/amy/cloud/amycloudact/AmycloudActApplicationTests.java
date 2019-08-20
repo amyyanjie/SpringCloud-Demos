@@ -16,19 +16,36 @@ public class AmycloudActApplicationTests {
     //2147483648
     @Test
     public void test3() {
-        int x = -123; //2147483647
-        System.out.println(reverse(x));
+        int x = 1000021; //2147483647
+        System.out.println(isPalindrome(x));
 
     }
+    //1000021
 
-    public boolean isPalindrome(int x) {
-        String str = String.valueOf(x);
-        String reserveStr = new StringBuilder(str).reverse().toString();
-        if (str.equals(reserveStr)) {
+    public static void main(String[] args) {
+        int x = 8; //2147483647
+
+        System.out.println(isPalindrome(x));
+    }
+    //  首位：12321/10000=1，末位：12321%10=1;  x->232: x=x
+//12321%10000/10
+    public static boolean isPalindrome(int x) {
+        if (x < 0 || (x != 0 && x % 10 == 0)) {
+            return false;
+        }
+        int rightPart = 0;
+        //rightPart为后半部分反转后的数
+        while (x > rightPart) {
+            rightPart = rightPart * 10 + x % 10;
+            x = x / 10;
+        }
+        //当原数字长度为奇数时，x == rightPart / 10
+        if (x == rightPart || x == rightPart / 10) {
             return true;
         }
         return false;
     }
+    //
 
     //	给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
     public int reverse(int x) {

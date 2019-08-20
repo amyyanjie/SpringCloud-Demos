@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 /**
  * @Author: yanjie
- * @Description: 添加srcurity配置后，服务始终注册不上 -> 因为新版本的security默认开启了scrf
+ * @Description: 解决添加srcurity配置后，服务始终注册不上问题 -> 因为新版本的security默认开启了scrf
  * @Date: 2019/08/19 14:56
  */
 @EnableWebSecurity
