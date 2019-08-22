@@ -25,7 +25,7 @@ spring:
     active: dev
   cloud:
     config:
-      name: monitor
+      name: monitor,common
       profile: dev  # 对应配置文件为${spring.cloud.config.name}-${spring.cloud.config.profile}.yml
       label: master
       discovery:

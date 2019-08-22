@@ -10,8 +10,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EnableDiscoveryClient
 public class AmycloudMonitorApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AmycloudMonitorApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AmycloudMonitorApplication.class, args);
+    }
 
 }

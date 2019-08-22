@@ -1,0 +1,7 @@
+# zipkin 指定zipkin服务器地址，将采样比例设为1:0
+spring:
+  zipkin:
+    base-url: http://localhost:8100
+  sleuth:
+    sampler:
+      percentage: 1.0

@@ -1,4 +1,4 @@
-package com.amy.cloud.amycloudmonitor;
+package com.amy.cloud.amycloudzipkin;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,10 +7,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class AmycloudMonitorApplicationTests {
+public class AmycloudZipkinApplicationTests {
 
-	@Test
-	public void contextLoads() {
-	}
+    @Test
+    public void contextLoads() {
+    }
 
 }

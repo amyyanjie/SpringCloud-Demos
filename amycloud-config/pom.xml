@@ -10,7 +10,7 @@
 
 	<artifactId>amycloud-config</artifactId>
 	<name>amycloud-config</name>
-	<description>配置中心-config</description>
+	<description>配置中心 基于spring cloud config</description>
 
 	<dependencies>
 		<!--config服务端-->
