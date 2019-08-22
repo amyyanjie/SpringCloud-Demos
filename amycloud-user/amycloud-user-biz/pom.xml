@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.amy.cloud</groupId>
-        <artifactId>amycloud</artifactId>
+        <artifactId>amycloud-user</artifactId>
         <version>1.0.0</version>
     </parent>
-    <artifactId>amycloud-act</artifactId>
-    <name>amycloud-act</name>
-    <description>活动服务-act</description>
+    <artifactId>amycloud-user-biz</artifactId>
+    <name>amycloud-user-biz</name>
+    <description>用户管理 业务biz模块</description>
 
     <dependencies>
         <!--eureka 客户端-->
@@ -29,6 +29,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
             <scope>compile</scope>
         </dependency>
+
     </dependencies>
 
     <build>

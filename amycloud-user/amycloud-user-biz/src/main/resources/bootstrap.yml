@@ -1,0 +1,47 @@
+server:
+  port: 7100
+
+# 注册中心配置
+eureka:
+  client:
+    service-url:
+      #      defaultZone: http://amy:amyRegister@localhost:6050/eureka
+      defaultZone: http://${registry.username}:${registry.password}@${registry.host}:${registry.port}/eureka/ # 指定服务注册中心地址
+  instance:
+    prefer-ip-address: true # 以IP地址注册到服务中心
+
+# 注册中心配置参数
+registry:
+  host: localhost
+  port: 6050
+  username: amy
+  password: amyRegister
+
+# 服务
+spring:
+  application:
+    name: amycloud-user  # 指定微服务的名称后续在调用的时候只需要使用该名称就可以进行服务的访问
+  profiles:
+    active: dev
+  cloud:
+    config:
+      name: common
+      profile: dev  # 对应配置文件为${spring.cloud.config.name}-${spring.cloud.config.profile}.yml
+      label: master
+      discovery:
+        enabled: true
+        service-id: amycloud-config
+
+# 引用监控限制内容Map <Key String>
+info:
+  artifact: com.amy.cloud
+  name: ${spring.application.name}
+  description: user服务接口
+  version: V1.0
+
+# 打开所有的监控点：
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
