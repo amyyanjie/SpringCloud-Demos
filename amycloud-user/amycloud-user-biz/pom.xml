@@ -30,6 +30,12 @@
             <scope>compile</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.amy.cloud</groupId>
+            <artifactId>amycloud-user-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>

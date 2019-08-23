@@ -1,9 +1,10 @@
 package com.amy.cloud.amycloudact;
 
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.math.BigDecimal;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -13,39 +14,47 @@ public class AmycloudActApplicationTests {
 //    public void contextLoads() {
 //    }
 
-    //2147483648
-    @Test
-    public void test3() {
-        int x = 1000021; //2147483647
-        System.out.println(isPalindrome(x));
-
-    }
     //1000021
 
     public static void main(String[] args) {
         int x = 8; //2147483647
+        investAmount("500.24");
+        investAmount1("500.24");
+        System.out.println();
+    }
 
-        System.out.println(isPalindrome(x));
+
+    private static void investAmount(String amount){
+        boolean ISPASS=true;
+        String msg;
+        BigDecimal[] result =  new BigDecimal(amount).divideAndRemainder(new BigDecimal(100));
+        if (!"".equals(result[1]) && result[1] != null) {
+            if(result[1].compareTo(BigDecimal.ZERO)!=0){
+                ISPASS=Boolean.FALSE;
+                msg="购买金额必须为100整数倍！";
+                System.out.println(result[0]);
+                System.out.println(result[1]);
+                System.out.println(msg);
+
+            }
+            System.out.println("======");
+        }
+        /*if( amt.intValue() != 0){
+            ISPASS=Boolean.FALSE;
+            MESSAGE="购买金额必须为100整数倍！";
+        }*/
     }
-    //  首位：12321/10000=1，末位：12321%10=1;  x->232: x=x
-//12321%10000/10
-    public static boolean isPalindrome(int x) {
-        if (x < 0 || (x != 0 && x % 10 == 0)) {
-            return false;
+
+    private static void investAmount1(String amount){
+        BigDecimal amt =  new BigDecimal(amount).remainder(new BigDecimal(100));
+        System.out.println(amt);
+        System.out.println("intValue:");
+        System.out.println (amt.intValue());
+        if( amt.compareTo(BigDecimal.ZERO)!=0){
+           String msg="购买金额必须为100整数倍！";
+            System.out.println(msg);
         }
-        int rightPart = 0;
-        //rightPart为后半部分反转后的数
-        while (x > rightPart) {
-            rightPart = rightPart * 10 + x % 10;
-            x = x / 10;
-        }
-        //当原数字长度为奇数时，x == rightPart / 10
-        if (x == rightPart || x == rightPart / 10) {
-            return true;
-        }
-        return false;
     }
-    //
 
     //	给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
     public int reverse(int x) {

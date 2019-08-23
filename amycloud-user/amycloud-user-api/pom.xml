@@ -11,4 +11,12 @@
     <name>amycloud-user-api</name>
     <description>用户管理 api模块</description>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>${spring-boot-starter-openfeign.version}</version>
+        </dependency>
+    </dependencies>
+
 </project>
