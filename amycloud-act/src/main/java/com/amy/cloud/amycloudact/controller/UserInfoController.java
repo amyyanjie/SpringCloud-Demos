@@ -25,4 +25,13 @@ public class UserInfoController {
         return remoteUserService.addUser(mobile, nickName);
     }
 
+    @GetMapping("/list")
+    public String getUserList(){
+        return remoteUserService.getUserList();
+    }
+
+    @GetMapping("/act/user/test")
+    public String test(){
+        return "abd";
+    }
 }

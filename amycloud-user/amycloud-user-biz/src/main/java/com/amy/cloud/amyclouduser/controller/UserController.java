@@ -10,17 +10,25 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class UserController {
 
-    @GetMapping("/user/get/{userId}")
-    public String getUserName(@PathVariable("userId") String userId) {
+    //这里是SpringMVC，URL中的参数与方法中的参数名相同无需在注解中注明参数名
+    @GetMapping("/user/get")
+    public String getUserName(@RequestParam String userId) {
         return "getUserName by userId:" + userId;
     }
 
     @PostMapping("/user/add")
-    public String addUser(@RequestParam("mobile") String mobile, @RequestParam("nickName") String nickName) {
+    public String addUser(@RequestParam String mobile, @RequestParam String nickName) {
         return "mobile:" + mobile + ",nickName:" + nickName;
     }
 
-    //    public String addUser(User user) {
-//        return "mobile:" + user.getMobile() + ",nickName:" + user.getNickName();
-//    }
+    @GetMapping("/user/list")
+    public String getUserList() {
+        return "getUserList" ;
+    }
+
+    @GetMapping("/user/test")
+    public String test(){
+        return "abd";
+    }
+
 }
