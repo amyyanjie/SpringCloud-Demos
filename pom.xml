@@ -21,7 +21,7 @@
         <module>amycloud-act</module>
         <module>amycloud-config</module>
         <module>amycloud-visual</module>
-        <module>amycloud-user</module>
+        <module>amycloud-user-server</module>
     </modules>
 
     <properties>
