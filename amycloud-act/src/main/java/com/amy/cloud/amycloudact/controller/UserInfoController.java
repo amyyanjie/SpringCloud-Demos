@@ -1,6 +1,7 @@
 package com.amy.cloud.amycloudact.controller;
 
 import com.amy.cloud.amycloudact.service.RemoteUserService;
+import com.amy.cloud.amyclouduserclient.api.UserServiceFeign;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.*;
 public class UserInfoController {
     @Autowired
     RemoteUserService remoteUserService;
+    @Autowired
+    private UserServiceFeign userServiceFeign;
 
     @GetMapping("/get")
     public String getUserName( String userId) {
@@ -26,8 +29,8 @@ public class UserInfoController {
     }
 
     @GetMapping("/list")
-    public String getUserList(){
-        return remoteUserService.getUserList();
+    public String getUserList(String role){
+        return userServiceFeign.getUserList(role);
     }
 
     @GetMapping("/test")

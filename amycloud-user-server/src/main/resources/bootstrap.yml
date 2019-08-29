@@ -1,5 +1,5 @@
 server:
-  port: 7100
+  port: 7200
 
 # 注册中心配置
 eureka:

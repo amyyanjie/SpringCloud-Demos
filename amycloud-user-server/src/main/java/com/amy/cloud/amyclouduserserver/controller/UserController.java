@@ -1,9 +1,6 @@
 package com.amy.cloud.amyclouduserserver.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Author: yanjie
@@ -14,22 +11,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("user")
 public class UserController {
     @GetMapping("/get")
-    public String getUserName( String userId) {
-        return "getUserName userId:"+userId;
+    public String getUserName(String userId) {
+        return "2:getUserName userId:" + userId;
     }
 
     @PostMapping("/add")
     public String addUser(String mobile, String nickName) {
-        return "addUser,mobile="+mobile+",nickName="+nickName;
+        return "addUser,mobile=" + mobile + ",nickName=" + nickName;
     }
 
-    @GetMapping("/list")
-    public String getUserList(){
-        return "getUserList";
+    @GetMapping("/list/{role}")
+    String getUserList(@PathVariable("role") String role) {
+        return "getUserList:role=" + role;
     }
 
     @GetMapping("/test")
-    public String test(){
+    public String test() {
         return "abdc";
     }
 }

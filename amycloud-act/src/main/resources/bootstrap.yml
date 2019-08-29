@@ -31,6 +31,8 @@ spring:
       discovery:
         enabled: true
         service-id: amycloud-config
+  main:
+    allow-bean-definition-overriding: true
 
 # 引用监控限制内容Map <Key String>
 info:
