@@ -30,8 +30,8 @@ public class UserInfoController {
         return remoteUserService.getUserList();
     }
 
-    @GetMapping("/act/user/test")
+    @GetMapping("/test")
     public String test(){
-        return "abd";
+        return "abdcd";
     }
 }

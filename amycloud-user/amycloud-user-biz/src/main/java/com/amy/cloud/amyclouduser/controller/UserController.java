@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     //这里是SpringMVC，URL中的参数与方法中的参数名相同无需在注解中注明参数名
-    @GetMapping("/user/get")
-    public String getUserName(@RequestParam String userId) {
-        return "getUserName by userId:" + userId;
+    @GetMapping("/user/get/{userId}")
+    public String getUserName(@PathVariable("userId") String userId) {
+        return "getUserName by userId :a" + userId;
     }
 
     @PostMapping("/user/add")
@@ -28,7 +28,12 @@ public class UserController {
 
     @GetMapping("/user/test")
     public String test(){
-        return "abd";
+        return "abdcd";
+    }
+
+    @GetMapping("/user/test1")
+    public String test1(){
+        return "abdcd";
     }
 
 }
