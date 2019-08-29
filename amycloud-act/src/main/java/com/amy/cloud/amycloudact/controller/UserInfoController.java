@@ -32,6 +32,6 @@ public class UserInfoController {
 
     @GetMapping("/test")
     public String test(){
-        return "abdcd";
+        return "eefa";
     }
 }

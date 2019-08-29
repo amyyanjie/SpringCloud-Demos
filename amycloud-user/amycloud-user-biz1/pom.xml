@@ -7,8 +7,8 @@
         <artifactId>amycloud</artifactId>
         <version>1.0.0</version>
     </parent>
-    <artifactId>amycloud-user-biz</artifactId>
-    <name>amycloud-user-biz</name>
+    <artifactId>amycloud-user-biz1</artifactId>
+    <name>amycloud-user-biz1</name>
     <description>用户管理 业务biz模块</description>
 
     <dependencies>
