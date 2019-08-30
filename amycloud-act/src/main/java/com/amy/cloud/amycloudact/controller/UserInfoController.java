@@ -23,9 +23,14 @@ public class UserInfoController {
         return remoteUserService.getUserName(userId);
     }
 
-    @PostMapping("/add")
-    public String addUser(String mobile, String nickName) {
+    @PostMapping("/add1")
+    public String add1User(String mobile, String nickName) {
         return remoteUserService.addUser(mobile, nickName);
+    }
+
+    @PostMapping("/add2")
+    public String add2User(String mobile, String nickName) {
+        return userServiceFeign.addUser(mobile, nickName);
     }
 
     @GetMapping("/list")

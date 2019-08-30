@@ -1,6 +1,7 @@
 package com.amy.cloud.amycloudact.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
  * @Description:
  * @Date: 2019/08/23 14:14
  */
-//@Component
+@Component
 //程序启动后，会进行包扫描，扫描所有的@ FeignClient的注解的类，并将这些信息注入到ioc容器中
 @FeignClient(name = "amycloud-user-server")
 public interface RemoteUserService {

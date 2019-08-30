@@ -1,5 +1,7 @@
 package com.amy.cloud.amyclouduserserver.controller;
 
+import com.amy.cloud.amyclouduserserver.models.User;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -16,8 +18,8 @@ public class UserController {
     }
 
     @PostMapping("/add")
-    public String addUser(String mobile, String nickName) {
-        return "addUser,mobile=" + mobile + ",nickName=" + nickName;
+    public String addUser(@Validated User user) {
+        return "addUser,mobile=" + user.getMobile() + ",nickName=" + user.getNickName();
     }
 
     @GetMapping("/list/{role}")

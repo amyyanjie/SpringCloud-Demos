@@ -1,5 +1,6 @@
 package com.amy.cloud.amyclouduserclient.api;
 
+import com.amy.cloud.amyclouduserclient.fallback.UserServiceFeignFallback;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @Date: 2019/08/29 16:42
  */
 @Component
-@FeignClient(name = "amycloud-user-server")
+@FeignClient(name = "amycloud-user-server", fallbackFactory = UserServiceFeignFallback.class)
 public interface UserServiceFeign {
     @GetMapping("/user/get")
         //feign中@PathVariable、@RequestParam必须制定参数名
