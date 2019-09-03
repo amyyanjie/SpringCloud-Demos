@@ -34,7 +34,7 @@ public class UserInfoController {
     }
 
     @GetMapping("/list")
-    public String getUserList(String role){
+    public String getUserList(@RequestParam String role){
         return userServiceFeign.getUserList(role);
     }
 

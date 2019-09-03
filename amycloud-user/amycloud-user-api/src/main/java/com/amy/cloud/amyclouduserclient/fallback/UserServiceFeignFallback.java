@@ -21,8 +21,7 @@ public class UserServiceFeignFallback implements FallbackFactory<UserServiceFeig
             @Override
             public String getUserName(String userId) {
                 LOGGER.error("getUserName:{} error", userId);
-                //return null;
-                return "getUserName error";
+                return null;
             }
 
             @Override
@@ -34,7 +33,8 @@ public class UserServiceFeignFallback implements FallbackFactory<UserServiceFeig
             @Override
             public String getUserList(String role) {
                 LOGGER.error("getUserList:{} error", role);
-                return null;
+//                return null;
+                return "getUserList error,role:" + role;
             }
         };
     }
