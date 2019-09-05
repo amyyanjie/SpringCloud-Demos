@@ -1,0 +1,5 @@
+zuul:
+  routes:
+    # 访问路径匹配/act/**时，会自动定位到amycloud-act服务
+    amycloud-act: /act/**
+    amycloud-user-server: /user/**
