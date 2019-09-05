@@ -3,3 +3,13 @@ zuul:
     # 访问路径匹配/act/**时，会自动定位到amycloud-act服务
     amycloud-act: /act/**
     amycloud-user-server: /user/**
+    amycloud-monitor: /admin/**
+    amycloud-zipkin:
+      path: /zipkin/**
+      serviceId: amycloud-zipkin
+      stripPrix: false #映射到微服务的url是否保留path拦截部分，默认为true。true 不保留，false 保留。
+
+
+
+
+
