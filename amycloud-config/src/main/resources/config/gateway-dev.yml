@@ -1,4 +1,6 @@
 zuul:
+  sensitive-headers: # 默认情况下，敏感头信息无法经过API网关进行传递，此配置使之可以传递
+  add-host-header: true # 解决重定向地址问题，跳转到网关地址，而非具体服务实例地址
   routes:
     # 访问路径匹配/act/**时，会自动定位到amycloud-act服务
     amycloud-act: /act/**
@@ -8,8 +10,3 @@ zuul:
       path: /zipkin/**
       serviceId: amycloud-zipkin
       stripPrix: false #映射到微服务的url是否保留path拦截部分，默认为true。true 不保留，false 保留。
-
-
-
-
-
