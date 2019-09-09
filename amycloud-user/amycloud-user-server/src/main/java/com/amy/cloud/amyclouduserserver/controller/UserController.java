@@ -28,7 +28,7 @@ public class UserController {
     }
 
     @GetMapping("/test")
-    public String test() {
-        return "abdc";
+    public String test(String str) {
+        return str.substring(3,8);
     }
 }
