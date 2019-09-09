@@ -1,6 +1,7 @@
 package com.amy.cloud.amycloudgateway.filter;
 
 import com.netflix.zuul.ZuulFilter;
+import com.alibaba.fastjson.JSONObject;
 import com.netflix.zuul.context.RequestContext;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -67,6 +68,13 @@ public class GlobalExceptionFilter extends ZuulFilter {
                 }
             }
         }
+        //封装错误信息
+        JSONObject errorInfo = new JSONObject();
+        errorInfo.put("code", 500);
+        errorInfo.put("msg", "server error");
+        errorInfo.put("data", null);
+        ctx.setSendZuulResponse(false);//zuul过滤该请求，不对其进行路由
+        ctx.setResponseBody(errorInfo.toJSONString());//重写相应内容
         return null;
     }
 }
