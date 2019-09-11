@@ -10,13 +10,6 @@ eureka:
   instance:
     prefer-ip-address: true # 以IP地址注册到服务中心
 
-# 注册中心配置参数
-registry:
-  host: localhost
-  port: 6050
-  username: amy
-  password: amyRegister
-
 # 服务
 spring:
   application:
@@ -33,6 +26,10 @@ spring:
         service-id: amycloud-config
   main:
     allow-bean-definition-overriding: true
+  servlet:
+    multipart:
+      max-file-size: 10Mb #默认1Mb
+      max-request-size: 10Mb #默认10Mb
 
 # 引用监控限制内容Map <Key String>
 info:
@@ -50,3 +47,10 @@ management:
 feign:
   hystrix:
     enabled: true
+
+# 注册中心配置参数
+registry:
+  host: localhost
+  port: 6050
+  username: amy
+  password: amyRegister
