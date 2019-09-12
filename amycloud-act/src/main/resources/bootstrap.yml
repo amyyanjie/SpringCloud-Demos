@@ -28,8 +28,8 @@ spring:
     allow-bean-definition-overriding: true
   servlet:
     multipart:
-      max-file-size: 10Mb #默认1Mb
-      max-request-size: 10Mb #默认10Mb
+      max-file-size: 10MB  #默认1MB
+      max-request-size: 10MB  #默认10MB
 
 # 引用监控限制内容Map <Key String>
 info:

@@ -10,3 +10,9 @@ zuul:
       path: /zipkin/**
       serviceId: amycloud-zipkin
       stripPrix: false #映射到微服务的url是否保留path拦截部分，默认为true。true 不保留，false 保留。
+
+# 提高超时配置
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
