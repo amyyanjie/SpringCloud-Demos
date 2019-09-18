@@ -36,6 +36,10 @@
             <version>${spring-cloud-starter-openfeign.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework.retry</groupId>
+            <artifactId>spring-retry</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.amy.cloud</groupId>
             <artifactId>amycloud-user-api</artifactId>
             <version>1.0.0</version>

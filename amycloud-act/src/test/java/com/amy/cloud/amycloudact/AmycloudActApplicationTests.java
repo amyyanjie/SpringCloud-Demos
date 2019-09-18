@@ -5,6 +5,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -17,13 +19,15 @@ public class AmycloudActApplicationTests {
     //1000021
 
     public static void main(String[] args) {
-        int[] nums = {1, 3, 5, 7}; //4  2  [0,3]
+        int[] nums = {6, 0, 7, 3,0,3}; //4  2  [0,3]
+        //[0,0,1,1,1,2,2,3,3,4]
         int target = 8;
 //        System.out.println(searchInsert(nums, target));
         //214739559
-        System.out.println(1);
-        System.out.println(mySqrt1(18));
-        System.out.println(mySqrt1(2147395599));
+//        System.out.println(1);
+//        System.out.println(mySqrt1(18));
+//        System.out.println(mySqrt1(2147395599));
+        System.out.println(removeDuplicates1(nums));
     }
 
 
@@ -54,7 +58,7 @@ public class AmycloudActApplicationTests {
         long left = 0, right = x;
         while (left <= right) {
             //此处mid是取左中位，如left=4,right=5,mid为4而非5
-            long mid = (left + right ) / 2;
+            long mid = (left + right) / 2;
             long square = mid * mid;
             if (square == x) {
                 return (int) mid;
@@ -92,6 +96,38 @@ public class AmycloudActApplicationTests {
             }
         }
         return (int) left;
+    }
+
+    //原地修改，不使用额外的数组空间。额外空间为O(1)
+    //[1,1,2,2,3]-> [1,2,3]
+    public static int removeDuplicates(int[] nums) {
+        int i = 0;
+        // i指针，nums中下标0到下标i的元素为非重复元素
+        // 遍历nums数组，j从下标1开始
+        for (int j = 1; j < nums.length; j++) {
+            // 因为nums是有序数组，当nums[j]!=nums[i]时，num[j]即为当前非重复元素。
+            // num[j]的值复制到nums[i+1]上
+            if (nums[j] != nums[i]) {
+                i++;
+                nums[i] = nums[j];
+            }
+        }
+        //数组中前i+1个元素
+        return i + 1;
+    }
+
+    public static int removeDuplicates1(int[] nums) {
+        int i = 0, j = 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        while (j < nums.length) {
+            if (!map.containsKey(nums[j])) {
+                map.put(nums[j], j);
+                nums[i] = nums[j];
+                i++;
+            }
+            j++;
+        }
+        return i;
     }
 
 
