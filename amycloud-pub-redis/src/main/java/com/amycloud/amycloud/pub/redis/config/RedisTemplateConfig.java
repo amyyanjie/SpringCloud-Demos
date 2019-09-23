@@ -1,4 +1,4 @@
-package com.amycloud.amycloudpubredis.config;
+package com.amycloud.amycloud.pub.redis.config;
 
 /**
  * @Author: yanjie
@@ -6,4 +6,5 @@ package com.amycloud.amycloudpubredis.config;
  * @Date: 2019/09/21 15:30
  */
 public class RedisTemplateConfig {
+
 }
