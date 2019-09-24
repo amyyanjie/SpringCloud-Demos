@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.amy.cloud</groupId>
-        <artifactId>amycloud</artifactId>
+        <artifactId>amycloud-pub</artifactId>
         <version>1.0.0</version>
     </parent>
     <artifactId>amycloud-pub-redis</artifactId>
@@ -12,20 +12,10 @@
     <description>redis</description>
     <packaging>pom</packaging>
 
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <!--设置了连接池相关参数，需要额外引入依赖-->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-pool2</artifactId>
         </dependency>
 
         <dependency>

@@ -1,4 +1,4 @@
-package com.amycloud.amycloud.pub.redis.utils;
+package com.amy.cloud.pub.redis.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

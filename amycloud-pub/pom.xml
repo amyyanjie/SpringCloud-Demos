@@ -7,14 +7,14 @@
         <artifactId>amycloud</artifactId>
         <version>1.0.0</version>
     </parent>
-    <artifactId>amycloud-user</artifactId>
-    <name>amycloud-user</name>
-    <description>user-用户模块</description>
+    <artifactId>amycloud-pub</artifactId>
+    <name>amycloud-pub</name>
+    <description>redis</description>
     <packaging>pom</packaging>
 
     <modules>
-        <module>amycloud-user-api</module>
-        <module>amycloud-user-server</module>
+        <module>amycloud-pub-base</module>
+        <module>amycloud-pub-redis</module>
     </modules>
 
 </project>

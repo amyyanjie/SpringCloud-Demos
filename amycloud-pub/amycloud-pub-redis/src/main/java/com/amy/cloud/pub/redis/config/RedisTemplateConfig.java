@@ -1,4 +1,4 @@
-package com.amycloud.amycloud.pub.redis.config;
+package com.amy.cloud.pub.redis.config;
 
 import lombok.AllArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
