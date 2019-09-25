@@ -13,13 +13,12 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * @Author: yanjie
- * @Description:
+ * @Description: RedisTemplate配置
  * @Date: 2019/09/21 15:30
  */
 @Configuration
-@AllArgsConstructor
-@EnableCaching //启用缓存
 @ConditionalOnBean(RedisConnectionFactory.class)
+@AllArgsConstructor
 public class RedisTemplateConfig {
     private final RedisConnectionFactory redisConnectionFactory;
 

@@ -9,6 +9,7 @@
     </parent>
     <artifactId>amycloud-pub-redis</artifactId>
     <name>amycloud-pub-redis</name>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
