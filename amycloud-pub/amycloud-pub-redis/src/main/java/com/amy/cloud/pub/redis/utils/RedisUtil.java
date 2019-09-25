@@ -2,6 +2,7 @@ package com.amy.cloud.pub.redis.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +17,8 @@ import java.util.concurrent.TimeUnit;
 public class RedisUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(RedisUtil.class);
 
-    private RedisTemplate<String, Object> redisTemplate;
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     //========================common========================
 

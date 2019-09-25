@@ -7,10 +7,9 @@
         <artifactId>amycloud-pub</artifactId>
         <version>1.0.0</version>
     </parent>
-    <artifactId>amycloud-pub-redis</artifactId>
-    <name>amycloud-pub-redis</name>
-    <description>redis</description>
-    <packaging>pom</packaging>
+    <artifactId>amycloud-pub-base</artifactId>
+    <name>amycloud-pub-base</name>
+
 
     <dependencies>
         <dependency>

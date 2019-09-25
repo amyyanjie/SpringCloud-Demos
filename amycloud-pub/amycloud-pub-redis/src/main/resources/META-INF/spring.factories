@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.amy.cloud.pub.redis.config.RedisTemplateConfig
+    com.amy.cloud.pub.redis.config.RedisTemplateConfig

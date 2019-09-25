@@ -9,12 +9,14 @@
     </parent>
     <artifactId>amycloud-pub</artifactId>
     <name>amycloud-pub</name>
-    <description>redis</description>
+    <description>pub</description>
     <packaging>pom</packaging>
 
     <modules>
         <module>amycloud-pub-base</module>
         <module>amycloud-pub-redis</module>
     </modules>
+
+
 
 </project>

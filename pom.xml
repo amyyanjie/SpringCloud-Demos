@@ -22,6 +22,7 @@
         <module>amycloud-config</module>
         <module>amycloud-visual</module>
         <module>amycloud-user</module>
+        <module>amycloud-pub</module>
     </modules>
 
     <properties>
