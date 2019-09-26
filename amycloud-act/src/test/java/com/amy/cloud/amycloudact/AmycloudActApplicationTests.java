@@ -19,15 +19,17 @@ public class AmycloudActApplicationTests {
     //1000021
 
     public static void main(String[] args) {
-        int[] nums = {6, 0, 7, 3,0,3}; //4  2  [0,3]
-        //[0,0,1,1,1,2,2,3,3,4]
+        int[] nums = {6, 0, 7, 3, 0, 3}; //4  2  [0,3]
+
+        String strs[] = {"flower", "flow", "flight"};
+
         int target = 8;
 //        System.out.println(searchInsert(nums, target));
-        //214739559
 //        System.out.println(1);
 //        System.out.println(mySqrt1(18));
 //        System.out.println(mySqrt1(2147395599));
-        System.out.println(removeDuplicates1(nums));
+//        System.out.println(removeDuplicates1(nums));
+        System.out.println(longestCommonPrefix(strs));
     }
 
 
@@ -130,5 +132,27 @@ public class AmycloudActApplicationTests {
         return i;
     }
 
-
+    //["flower", "flow", "flight"]
+    public static String longestCommonPrefix(String[] strs) {
+        if (strs.length == 0) {
+            return "";
+        }
+        String firstStr = strs[0];
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < firstStr.length(); i++) {
+            char comparedChar = firstStr.charAt(i);
+            for (int j = 0; j < strs.length; j++) {
+                if (strs[j].length() == i) {
+                    return result.toString();
+                }
+                if (strs[j].charAt(i) != firstStr.charAt(i)) {
+                    return result.toString();
+                }
+                if (j == strs.length - 1) {
+                    result.append(comparedChar);
+                }
+            }
+        }
+        return result.toString();
+    }
 }
