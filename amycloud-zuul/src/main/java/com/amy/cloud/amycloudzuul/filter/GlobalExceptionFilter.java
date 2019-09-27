@@ -1,4 +1,4 @@
-package com.amy.cloud.amycloudgateway.filter;
+package com.amy.cloud.amycloudzuul.filter;
 
 import com.netflix.zuul.ZuulFilter;
 import com.alibaba.fastjson.JSONObject;

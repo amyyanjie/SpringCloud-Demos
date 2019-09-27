@@ -18,6 +18,7 @@
 
     <modules>
         <module>amycloud-eureka</module>
+        <module>amycloud-zuul</module>
         <module>amycloud-act</module>
         <module>amycloud-config</module>
         <module>amycloud-visual</module>

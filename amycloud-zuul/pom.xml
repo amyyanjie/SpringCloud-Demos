@@ -7,8 +7,8 @@
         <artifactId>amycloud</artifactId>
         <version>1.0.0</version>
     </parent>
-    <artifactId>amycloud-gateway</artifactId>
-    <name>amycloud-gateway</name>
+    <artifactId>amycloud-zuul</artifactId>
+    <name>amycloud-zuul</name>
     <description>网关-基于spring cloud zuul</description>
 
     <dependencies>

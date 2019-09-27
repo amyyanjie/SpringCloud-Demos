@@ -1,4 +1,4 @@
-package com.amy.cloud.amycloudgateway.fallback;
+package com.amy.cloud.amycloudzuul.fallback;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
