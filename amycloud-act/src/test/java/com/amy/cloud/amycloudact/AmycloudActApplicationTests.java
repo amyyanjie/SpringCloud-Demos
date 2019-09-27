@@ -133,26 +133,33 @@ public class AmycloudActApplicationTests {
     }
 
     //["flower", "flow", "flight"]
-    public static String longestCommonPrefix(String[] strs) {
+    public static String longestCommonPrefix1(String[] strs) {
         if (strs.length == 0) {
             return "";
         }
         String firstStr = strs[0];
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < firstStr.length(); i++) {
-            char comparedChar = firstStr.charAt(i);
-            for (int j = 0; j < strs.length; j++) {
-                if (strs[j].length() == i) {
-                    return result.toString();
-                }
-                if (strs[j].charAt(i) != firstStr.charAt(i)) {
-                    return result.toString();
-                }
-                if (j == strs.length - 1) {
-                    result.append(comparedChar);
-                }
+        String result="";
+        for (int i = 1; i < strs.length; i++) {
+            while (strs[i].indexOf(firstStr) != 0) {
+                result=firstStr.substring(0,strs.length-1);
             }
         }
-        return result.toString();
+
+        return result;
     }
+
+    //["flower", "flow", "flight"]
+    public static String longestCommonPrefix(String[] strs) {
+        if (strs.length == 0) return "";
+        String prefix = strs[0];
+        for (int i = 1; i < strs.length; i++)
+            //若strs[i].indexOf(prefix)=0，表示prefix包含于strs[i]，从下标0开始
+            while (strs[i].indexOf(prefix) != 0) {
+                //若prefix不完全包含于strs[i],将prefix去掉末尾一位
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (prefix.isEmpty()) return "";
+            }
+        return prefix;
+    }
+
 }
