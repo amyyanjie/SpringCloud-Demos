@@ -1,4 +1,4 @@
-package com.amycloud.amycloudgateway;
+package com.amycloud.gateway;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

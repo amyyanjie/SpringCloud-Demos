@@ -3,13 +3,13 @@ server:
 
 # 注册中心配置
 # 这里注释掉，不再用zuul，换成spring cloud gateway
-eureka:
-  client:
-    service-url:
-      #      defaultZone: http://amy:amyRegister@localhost:6050/eureka
-      defaultZone: http://${registry.username}:${registry.password}@${registry.host}:${registry.port}/eureka/ # 指定服务注册中心地址
-  instance:
-    prefer-ip-address: true # 以IP地址注册到服务中心
+#eureka:
+#  client:
+#    service-url:
+#      #      defaultZone: http://amy:amyRegister@localhost:6050/eureka
+#      defaultZone: http://${registry.username}:${registry.password}@${registry.host}:${registry.port}/eureka/ # 指定服务注册中心地址
+#  instance:
+#    prefer-ip-address: true # 以IP地址注册到服务中心
 
 # 注册中心配置参数
 registry:
