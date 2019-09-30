@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启自动依据serverId路由转发的功能，只要在访问路径上指定要访问的服务即可
+      routes:
+        - id: amycloud-act  # 路由的ID
+          uri: lb://amycloud-act # 路由转发到的服务名称，以lb:开头（lb代表从注册中心获取服务）
+          predicates: # 配置该路由的断言
+            - Path=/act/** # 匹配路径转发
+          filters:
+            - StripPrefix=1 #映射到微服务的url不保留path拦截部分
+        - id: amycloud-user-server
+          uri: lb://amycloud-user-server
+          predicates:
+            - Path=/user/**

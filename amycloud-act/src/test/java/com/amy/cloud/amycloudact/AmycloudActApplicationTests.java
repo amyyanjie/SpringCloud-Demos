@@ -20,7 +20,6 @@ public class AmycloudActApplicationTests {
 
     public static void main(String[] args) {
         int[] nums = {6, 0, 7, 3, 0, 3}; //4  2  [0,3]
-
         String strs[] = {"flower", "flow", "flight"};
 
         int target = 8;
@@ -29,7 +28,8 @@ public class AmycloudActApplicationTests {
 //        System.out.println(mySqrt1(18));
 //        System.out.println(mySqrt1(2147395599));
 //        System.out.println(removeDuplicates1(nums));
-        System.out.println(longestCommonPrefix(strs));
+//        System.out.println(longestCommonPrefix(strs));
+        System.out.println(countAndSay(2));
     }
 
 
@@ -138,10 +138,10 @@ public class AmycloudActApplicationTests {
             return "";
         }
         String firstStr = strs[0];
-        String result="";
+        String result = "";
         for (int i = 1; i < strs.length; i++) {
             while (strs[i].indexOf(firstStr) != 0) {
-                result=firstStr.substring(0,strs.length-1);
+                result = firstStr.substring(0, strs.length - 1);
             }
         }
 
@@ -162,4 +162,25 @@ public class AmycloudActApplicationTests {
         return prefix;
     }
 
+    //1 11 21 1211 111221 312211 13112221 1113213211
+    //
+
+    public static String countAndSay(int n) {
+        String lastStr = "1";
+        for (int i = 2; i <= n; i++) {
+            int repeatedNum = 1;
+            char lastChar = 0;
+            StringBuilder result = new StringBuilder();
+            for (int j = 0; j < lastStr.length(); j++) {
+                if (lastStr.charAt(j) == lastChar) {
+                    repeatedNum++;
+                    result.delete(result.length() - 2, result.length());
+                }
+                result.append(repeatedNum).append(lastStr.charAt(j));
+                lastChar = lastStr.charAt(j);
+            }
+            lastStr = result.toString();
+        }
+        return lastStr;
+    }
 }
