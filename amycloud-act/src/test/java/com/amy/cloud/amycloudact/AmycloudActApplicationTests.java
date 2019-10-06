@@ -163,24 +163,27 @@ public class AmycloudActApplicationTests {
     }
 
     //1 11 21 1211 111221 312211 13112221 1113213211
-    //
+    //"111221"
+    //"314241"
 
     public static String countAndSay(int n) {
-        String lastStr = "1";
+        String str = "1";
         for (int i = 2; i <= n; i++) {
-            int repeatedNum = 1;
+            int repeatedCount = 1;
             char lastChar = 0;
             StringBuilder result = new StringBuilder();
-            for (int j = 0; j < lastStr.length(); j++) {
-                if (lastStr.charAt(j) == lastChar) {
-                    repeatedNum++;
+            for (int j = 0; j < str.length(); j++) {
+                if (lastChar == str.charAt(j)) {
+                    repeatedCount++;
                     result.delete(result.length() - 2, result.length());
+                } else {
+                    repeatedCount = 1;
+                    lastChar = str.charAt(j);
                 }
-                result.append(repeatedNum).append(lastStr.charAt(j));
-                lastChar = lastStr.charAt(j);
+                result.append(repeatedCount).append(str.charAt(j));
             }
-            lastStr = result.toString();
+            str = result.toString();
         }
-        return lastStr;
+        return str;
     }
 }
