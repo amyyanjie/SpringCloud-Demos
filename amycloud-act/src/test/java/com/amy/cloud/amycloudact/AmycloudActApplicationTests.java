@@ -4,186 +4,132 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class AmycloudActApplicationTests {
 
-//    @Test
-//    public void contextLoads() {
-//    }
+    public static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
 
-    //1000021
-
-    public static void main(String[] args) {
-        int[] nums = {6, 0, 7, 3, 0, 3}; //4  2  [0,3]
-        String strs[] = {"flower", "flow", "flight"};
-
-        int target = 8;
-//        System.out.println(searchInsert(nums, target));
-//        System.out.println(1);
-//        System.out.println(mySqrt1(18));
-//        System.out.println(mySqrt1(2147395599));
-//        System.out.println(removeDuplicates1(nums));
-//        System.out.println(longestCommonPrefix(strs));
-        System.out.println(countAndSay(2));
+        TreeNode(int x) {
+            val = x;
+        }
     }
 
+    public static int maxDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+    }
 
-    public static int searchInsert(int[] nums, int target) {
-        int left = 0;
-        int right = nums.length - 1;
-        int mid;
-        while (left <= right) { //注意循环条件
-            mid = (right + left) / 2;
-            if (nums[mid] == target) {
-                return mid;
-            } else if (target > nums[mid]) {
-                left = mid + 1; //left右移
+    public static void main(String args[]) {
+
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
+    }
+
+    public ListNode deleteDuplicates(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        ListNode pre = new ListNode(-1);
+        pre.next = head;
+        while (head.next != null) {
+            if (head.next.val == head.val) {
+                head.next = head.next.next;
+                continue;
+            }
+            head = head.next;
+        }
+        return pre.next;
+    }
+
+    public ListNode deleteDuplicates1(ListNode head) {
+        ListNode current = head;
+        while (current != null && current.next != null) {
+            if (current.next.val == current.val) {
+                current.next = current.next.next;
             } else {
-                right = right - 1; //right左移
+                current = current.next;
             }
         }
-        return left; //若target不存在于nums数组，返回插入位置：left
+        return head;
     }
 
-
-    //求平方根 9->3 8->4->2  18->9->3 ->6->4->5>4
-    //18->9->5->3->4
-    public static int mySqrt(int x) {
-//        if (x == 1) {
-//            return 1;
-//        }
-        long left = 0, right = x;
-        while (left <= right) {
-            //此处mid是取左中位，如left=4,right=5,mid为4而非5
-            long mid = (left + right) / 2;
-            long square = mid * mid;
-            if (square == x) {
-                return (int) mid;
-            } else if (square > x) {
-                right = mid - 1;
-            } else {
-                left = mid;
-            }
-            //因为mid是左中位，当区间差值为1时，会陷入循环，如[4,5]
-            //因为结果需去掉小数点，则可直接返回left
-//            if (right - left == 1) {
-//                return (int) left;
-//            }
-        }
-        return (int) left;
-    }
-
-    public static int mySqrt1(int x) {
-        long left = 0, right = x;
-        while (left <= right) {
-            //此处取右中位数，left=4,right=5，mid=5
-            //取右中位数的好处是能考虑到x=1的情况，不用再单独判断。
-            long mid = (left + right + 1) / 2;
-            long square = mid * mid;
-            if (square == x) {
-                return (int) mid;
-            } else if (square > x) {
-                right = mid;
-            } else {
-                left = mid;
-            }
-            //无论取左还是右中位数，这里都会存在区间差为1，此判断都能解决陷入死循环的情况
-            if (right - left == 1) {
-                return (int) left;
-            }
-        }
-        return (int) left;
-    }
-
-    //原地修改，不使用额外的数组空间。额外空间为O(1)
-    //[1,1,2,2,3]-> [1,2,3]
-    public static int removeDuplicates(int[] nums) {
-        int i = 0;
-        // i指针，nums中下标0到下标i的元素为非重复元素
-        // 遍历nums数组，j从下标1开始
-        for (int j = 1; j < nums.length; j++) {
-            // 因为nums是有序数组，当nums[j]!=nums[i]时，num[j]即为当前非重复元素。
-            // num[j]的值复制到nums[i+1]上
-            if (nums[j] != nums[i]) {
-                i++;
-                nums[i] = nums[j];
-            }
-        }
-        //数组中前i+1个元素
-        return i + 1;
-    }
-
-    public static int removeDuplicates1(int[] nums) {
-        int i = 0, j = 0;
-        Map<Integer, Integer> map = new HashMap<>();
-        while (j < nums.length) {
-            if (!map.containsKey(nums[j])) {
-                map.put(nums[j], j);
-                nums[i] = nums[j];
-                i++;
-            }
-            j++;
-        }
-        return i;
-    }
-
-    //["flower", "flow", "flight"]
-    public static String longestCommonPrefix1(String[] strs) {
-        if (strs.length == 0) {
-            return "";
-        }
-        String firstStr = strs[0];
-        String result = "";
-        for (int i = 1; i < strs.length; i++) {
-            while (strs[i].indexOf(firstStr) != 0) {
-                result = firstStr.substring(0, strs.length - 1);
-            }
-        }
-
-        return result;
-    }
-
-    //["flower", "flow", "flight"]
-    public static String longestCommonPrefix(String[] strs) {
-        if (strs.length == 0) return "";
-        String prefix = strs[0];
-        for (int i = 1; i < strs.length; i++)
-            //若strs[i].indexOf(prefix)=0，表示prefix包含于strs[i]，从下标0开始
-            while (strs[i].indexOf(prefix) != 0) {
-                //若prefix不完全包含于strs[i],将prefix去掉末尾一位
-                prefix = prefix.substring(0, prefix.length() - 1);
-                if (prefix.isEmpty()) return "";
-            }
-        return prefix;
-    }
-
-    //1 11 21 1211 111221 312211 13112221 1113213211
-    //"111221"
-    //"314241"
-
-    public static String countAndSay(int n) {
-        String str = "1";
-        for (int i = 2; i <= n; i++) {
-            int repeatedCount = 1;
-            char lastChar = 0;
-            StringBuilder result = new StringBuilder();
-            for (int j = 0; j < str.length(); j++) {
-                if (lastChar == str.charAt(j)) {
-                    repeatedCount++;
-                    result.delete(result.length() - 2, result.length());
-                } else {
-                    repeatedCount = 1;
-                    lastChar = str.charAt(j);
+    //输入: 1->2->3->3->3->4->4->5  排序链表
+    //输出: 1->2->5
+    public ListNode deleteDuplicatesII(ListNode head) {
+        //为了防止删除头节点，需建立空节点
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode cur = dummy;
+        while (cur.next != null && cur.next.next != null) {
+            // 如果出现重复元素，创建临时指针temp，temp指向重复元素中的第一个元素
+            if (cur.next.val == cur.next.next.val) {
+                ListNode temp = cur.next;
+                while (temp.next != null && temp.val == temp.next.val) {
+                    temp = temp.next;
                 }
-                result.append(repeatedCount).append(str.charAt(j));
+                // 通过循环区中，temp直至指向重复元素中的最后一个元素
+                // 此时，cur的next指针指向temp下一元素，消除了此重复元素
+                cur.next = temp.next;
+                // 注意此时并不会：cur=cur.next，因为cur.next元素只是与当前重复元素temp值不同，可能与cur.next.next元素重复
+            } else {
+                cur = cur.next;
             }
-            str = result.toString();
         }
-        return str;
+        return dummy.next;
+    }
+
+    public ListNode deleteDuplicatesII2(ListNode head) {
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        // pre指针，指向空头结点
+        ListNode pre = dummy;
+        // cur指针，指向head头结点
+        ListNode cur = head;
+        while (cur != null && cur.next != null) {
+            if (cur.val == cur.next.val) {
+                // 当cur.val == cur.next.val
+                // cur指针后移动，直到找到与cur.val不同的值
+                while (cur.next != null && cur.val == cur.next.val) {
+                    cur = cur.next;
+                }
+                // 通过循环，cur指向该重复元素中的最后一个元素
+                // 此时，pre的next指针指向cur下一元素，消除了此重复元素
+                pre.next = cur.next;
+                // 注意此时并不会：pre = pre.next;pre不会向前移动，因为pre.next元素还可能是另一重复元素
+            } else {
+                pre = pre.next;
+            }
+            cur = cur.next;
+        }
+        return dummy.next;
+    }
+
+    public int singleNumber(int[] nums) {
+        //其余都出现两次，只有一个数出现一次
+        //[4,1,2,1,2]
+        Set<Integer> set = new HashSet<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (!set.add(nums[i])) {
+                set.remove(nums[i]);
+            }
+
+        }
+        return 0;
     }
 }
