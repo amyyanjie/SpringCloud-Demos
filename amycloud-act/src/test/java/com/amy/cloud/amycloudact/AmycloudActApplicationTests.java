@@ -28,9 +28,6 @@ public class AmycloudActApplicationTests {
         return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
     }
 
-    public static void main(String args[]) {
-
-    }
 
     public class ListNode {
         int val;
@@ -94,42 +91,70 @@ public class AmycloudActApplicationTests {
         return dummy.next;
     }
 
-    public ListNode deleteDuplicatesII2(ListNode head) {
-        ListNode dummy = new ListNode(-1);
-        dummy.next = head;
-        // pre指针，指向空头结点
-        ListNode pre = dummy;
-        // cur指针，指向head头结点
-        ListNode cur = head;
-        while (cur != null && cur.next != null) {
-            if (cur.val == cur.next.val) {
-                // 当cur.val == cur.next.val
-                // cur指针后移动，直到找到与cur.val不同的值
-                while (cur.next != null && cur.val == cur.next.val) {
-                    cur = cur.next;
-                }
-                // 通过循环，cur指向该重复元素中的最后一个元素
-                // 此时，pre的next指针指向cur下一元素，消除了此重复元素
-                pre.next = cur.next;
-                // 注意此时并不会：pre = pre.next;pre不会向前移动，因为pre.next元素还可能是另一重复元素
-            } else {
-                pre = pre.next;
-            }
-            cur = cur.next;
+    //其余都出现两次，只有一个数出现一次
+    //[4,1,2,1,2]
+    public int singleNumber(int[] nums) {
+        int res = 0;
+        for (int num : nums) {
+            res = res ^ num;
         }
-        return dummy.next;
+        return res;
     }
 
-    public int singleNumber(int[] nums) {
-        //其余都出现两次，只有一个数出现一次
-        //[4,1,2,1,2]
-        Set<Integer> set = new HashSet<>();
-        for (int i = 0; i < nums.length; i++) {
-            if (!set.add(nums[i])) {
-                set.remove(nums[i]);
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> res = new ArrayList<>();
+
+
+        return null;
+
+    }
+
+
+    public static void main(String args[]) {
+        int[] array = new int[]{7, 1, 3, 10, 5, 2, 8, 9, 6};
+        System.out.println(Arrays.toString(array));
+
+    }
+
+
+    public boolean isLetterOrDigit(char ch) {
+        return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9');
+    }
+
+    public char toLowerCase(char ch) {
+        if (ch >= 'A' && ch <= 'Z') {
+            return (char) (ch + 32);
+        }
+        return ch;
+    }
+
+    //链表有环 哈希表
+    public boolean hasCycle(ListNode head) {
+        Set<ListNode> set = new HashSet<>();
+        while (head != null) {
+            if (set.contains(head)) {
+                return true;
             }
+            set.add(head);
+            head = head.next;
 
         }
-        return 0;
+        return false;
+    }
+
+    public boolean hasCycle1(ListNode head) {
+        if (head == null || head.next == null) {
+            return false;
+        }
+        ListNode slow = head;
+        ListNode fast = head.next;
+        while (slow != fast) {
+            if (slow == null || fast == null) {
+                return false;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return true;
     }
 }
