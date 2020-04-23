@@ -1,10 +1,13 @@
 package com.amy.cloud.amycloudact;
 
+import javafx.util.Pair;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 @RunWith(SpringRunner.class)
@@ -111,8 +114,27 @@ public class AmycloudActApplicationTests {
 
 
     public static void main(String args[]) {
-        int[] array = new int[]{7, 1, 3, 10, 5, 2, 8, 9, 6};
-        System.out.println(Arrays.toString(array));
+        List list = Arrays.asList("a", "b", "c");
+        List<String> list1 = new ArrayList<>(Arrays.asList("a", "b", "c"));
+
+        String[] s = {"a", "b", "c"};
+        List<String> listString = Stream.of(s).collect(Collectors.toList());
+//        System.out.println(listString.toString());
+        List<String> list3 = Arrays.stream(s).collect(Collectors.toList());
+
+        //集合转数组
+        String[] a = Stream.of(listString).toArray(String[]::new);
+        String[] a1 = listString.stream().toArray(String[]::new);
+
+
+        String[] b = listString.toArray(new String[0]);
+        StringBuilder res = new StringBuilder();
+        for (String s1 : b) {
+            res.append(s1);
+        }
+//        System.out.println(res);
+        String[] c = listString.toArray(new String[0]);
+
 
     }
 
@@ -157,4 +179,87 @@ public class AmycloudActApplicationTests {
         }
         return true;
     }
+
+    //自底向上的层次遍历
+    //广度优先遍历，从上向下
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+        LinkedList<List<Integer>> res = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        if (root != null) {
+            queue.add(root);
+        }
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            List<Integer> nodeList = new ArrayList<>();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.remove();
+                nodeList.add(node.val);
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+            }
+            res.addFirst(nodeList);
+        }
+        return res;
+    }
+
+    //[3,9,20,null,null,15,7],
+    public int minDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return minDepth(root.left) + 1;
+    }
+
+    public int minDepth1(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        int depth = 1;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.remove();
+                if (node.left == null && node.right == null) {
+                    return depth;
+                }
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+            }
+            depth++;
+        }
+        return depth;
+    }
+
+    //递归 [1,2]
+    public int minDepth2(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        //左右孩子都为空时，返回1
+        if (root.left == null && root.right == null) {
+            return 1;
+        }
+        //左右孩子有一个为空时，返回不为空的孩子节点
+        //左右孩子都不为空时，返回最短的孩子节点。
+        //[3,9,20,null,null,15,7]
+//        if (root.left != null) {
+//            return minDepth2(root.left) + 1;
+//        }
+//        if (root.right != null) {
+//            return minDepth2(root.right) + 1;
+//        }
+        return minDepth2(root.left) + 1;
+    }
+
+
 }
