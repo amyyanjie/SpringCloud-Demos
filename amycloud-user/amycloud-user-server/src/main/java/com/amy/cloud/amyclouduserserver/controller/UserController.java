@@ -18,7 +18,7 @@ public class UserController {
     }
 
     @PostMapping("/add")
-    public String addUser(@Validated User user) {
+    public String addUser(User user) {
         return "addUser,mobile=" + user.getMobile() + ",nickName=" + user.getNickName();
     }
 

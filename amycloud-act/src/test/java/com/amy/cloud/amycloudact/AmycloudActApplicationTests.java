@@ -39,14 +39,73 @@ public class AmycloudActApplicationTests {
         }
     }
 
-
-    public static void main(String args[]) {
-
+    // 双指针
+    // numbers = [2, 7, 11, 15], target = 9
+    public int[] twoSum(int[] numbers, int target) {
+        int p1 = 0;
+        int p2 = numbers.length - 1;
+        int curSum = numbers[p1] + numbers[p2];
+        while (curSum != target) {
+            if (curSum > target) {
+                p2--;
+            } else {
+                p1++;
+            }
+            curSum = numbers[p1] + numbers[p2];
+        }
+        return new int[]{p1 + 1, p2 + 1};
     }
 
 
+    public static void main(String args[]) {
+        System.out.println(convertToTitle(1000));
+
+    }
+
+    //
+    public static String convertToTitle(int n) {
+        StringBuilder res = new StringBuilder();
+        while (n > 0) {
+            res.append((char) (n % 26 - 1 + 'A'));
+            n = n / 26;
+        }
+        return res.reverse().toString();
+    }
+
+    // 多数元素 使用Map存储元素次数
+    public int majorityElement(int[] nums) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int num : nums) {
+            if (!map.containsKey(num)) {
+                map.put(num, 1);
+                continue;
+            }
+            // 若元素在map中存在，将次数+1
+            map.put(num, map.get(num) + 1);
+            // 次数+1后，当前次数若 > n/2，则为多数元素。
+            if (map.get(num) > nums.length / 2) {
+                return num;
+            }
+        }
+        return nums[0]; //若只有一个元素
+    }
+
+    //
+    public int majority(int[] nums) {
+        int count = 0;
+        int num = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (count == 0) {
+                count++;
+                num=nums[i];
+            }else {
+
+            }
 
 
+        }
+        return 0;
+    }
 
     public int minDepth1(TreeNode root) {
         if (root == null) {
