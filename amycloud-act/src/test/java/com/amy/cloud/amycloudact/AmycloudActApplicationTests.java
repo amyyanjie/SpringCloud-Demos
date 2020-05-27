@@ -66,7 +66,8 @@ public class AmycloudActApplicationTests {
     public static String convertToTitle(int n) {
         StringBuilder res = new StringBuilder();
         while (n > 0) {
-            res.append((char) (n % 26 - 1 + 'A'));
+            n--;
+            res.append((char) (n % 26 + 'A'));
             n = n / 26;
         }
         return res.reverse().toString();
