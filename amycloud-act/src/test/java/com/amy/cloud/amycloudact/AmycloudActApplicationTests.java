@@ -39,72 +39,49 @@ public class AmycloudActApplicationTests {
         }
     }
 
-    // 双指针
-    // numbers = [2, 7, 11, 15], target = 9
-    public int[] twoSum(int[] numbers, int target) {
-        int p1 = 0;
-        int p2 = numbers.length - 1;
-        int curSum = numbers[p1] + numbers[p2];
-        while (curSum != target) {
-            if (curSum > target) {
-                p2--;
-            } else {
-                p1++;
-            }
-            curSum = numbers[p1] + numbers[p2];
-        }
-        return new int[]{p1 + 1, p2 + 1};
-    }
 
-
-    public static void main(String args[]) {
-        System.out.println(convertToTitle(1000));
+    public static void main(String args[]) throws Exception {
+//        String[] str = {"a", "b", "c"};
+//        List<String> listString = Arrays.stream(str).collect(Collectors.toList());
+//        System.out.println(listString.indexOf(new String("c")));
+//        System.out.println(listString.indexOf("c"));
 
     }
 
-    //
-    public static String convertToTitle(int n) {
-        StringBuilder res = new StringBuilder();
-        while (n > 0) {
-            n--;
-            res.append((char) (n % 26 + 'A'));
-            n = n / 26;
-        }
-        return res.reverse().toString();
+    public int findMin(int[] nums) {
+        return 0;
     }
 
-    // 多数元素 使用Map存储元素次数
-    public int majorityElement(int[] nums) {
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int num : nums) {
-            if (!map.containsKey(num)) {
-                map.put(num, 1);
-                continue;
-            }
-            // 若元素在map中存在，将次数+1
-            map.put(num, map.get(num) + 1);
-            // 次数+1后，当前次数若 > n/2，则为多数元素。
-            if (map.get(num) > nums.length / 2) {
-                return num;
-            }
+
+
+    public class Tire {
+        // 不用建一个变量来存当前具体字符。
+        // 使用数组表示，若当前字符对应的下标元素非空，则表示存在这个字符
+        private Tire[] next;
+        private boolean isEnd;
+
+        public Tire() {
+            next = new Tire[26];
+            isEnd = false;
         }
-        return nums[0]; //若只有一个元素
+
+        // 将字符串倒序插入字典树
+        public void reversedInsert(String s) {
+            Tire curPos = this; // 使每次调用方法时，都从树的头节点开始
+            for (int i = s.length() - 1; i >= 0; i--) {
+                int t = s.charAt(i) - 'a';
+                if (curPos.next[t] == null) {
+                    curPos.next[t] = new Tire();
+                }
+                curPos = curPos.next[t];
+            }
+            curPos.isEnd = true;
+        }
+
     }
 
-    //
-    public int majority(int[] nums) {
-        int count = 0;
-        int num = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (count == 0) {
-                count++;
-                num=nums[i];
-            }else {
 
-            }
-
-
-        }
+    public int findKthLargest(int[] nums, int k) {
         return 0;
     }
 
@@ -176,6 +153,7 @@ public class AmycloudActApplicationTests {
         }
         return false;
     }
+
     public boolean hasPathSum1(TreeNode root, int sum) {
         if (root == null) {
             return false;
@@ -185,6 +163,23 @@ public class AmycloudActApplicationTests {
             return true;
         }
         return hasPathSum1(root.left, sum) || hasPathSum1(root.right, sum);
+    }
+
+    public static int testFinally1() {
+        int result1 = 1;
+        try {
+            System.out.println("try, result1:" + result1);
+            return result1;
+        } catch (Exception ex) {
+            result1 = 2;
+            return result1;
+        } finally {
+            result1 = 3;
+//            System.out.println("finally, result1:"+result1);
+            System.out.println("execute testFinally1");
+        }
+//        System.out.println("return result1:"+result1);
+//        return result1;
     }
 
 
