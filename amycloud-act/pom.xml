@@ -49,6 +49,12 @@
             <artifactId>amycloud-user-api</artifactId>
             <version>1.0.0</version>
         </dependency>
+<!--        guava自带布隆过滤器-->
+<!--        <dependency>-->
+<!--            <groupId>com.google.guava</groupId>-->
+<!--            <artifactId>guava</artifactId>-->
+<!--            <version>20.0</version>-->
+<!--        </dependency>-->
     </dependencies>
 
     <build>

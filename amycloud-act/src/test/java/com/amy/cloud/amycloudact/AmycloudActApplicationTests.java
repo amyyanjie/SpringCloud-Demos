@@ -1,16 +1,22 @@
 package com.amy.cloud.amycloudact;
 
+import com.google.common.hash.BloomFilter;
+import com.google.common.hash.Funnels;
 import javafx.util.Pair;
+import org.junit.Assert;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class AmycloudActApplicationTests {
+
 
     public static class TreeNode {
         int val;
@@ -39,45 +45,27 @@ public class AmycloudActApplicationTests {
         }
     }
 
+    public String convert(String s, int numRows) {
 
-    public static void main(String args[]) throws Exception {
-//        String[] str = {"a", "b", "c"};
-//        List<String> listString = Arrays.stream(str).collect(Collectors.toList());
-//        System.out.println(listString.indexOf(new String("c")));
-//        System.out.println(listString.indexOf("c"));
+        char[] chars;
+        //z字形
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            //判断是第几行
 
+
+
+        }
+        return null;
     }
 
-    public int findMin(int[] nums) {
-        return 0;
-    }
 
-
-
-    public class Tire {
-        // 不用建一个变量来存当前具体字符。
-        // 使用数组表示，若当前字符对应的下标元素非空，则表示存在这个字符
-        private Tire[] next;
-        private boolean isEnd;
-
-        public Tire() {
-            next = new Tire[26];
-            isEnd = false;
+    public static void main(String args[]) {
+        int p = 0;
+        for (int j = 0; j < 10; j++) {
+            p = p++;
         }
-
-        // 将字符串倒序插入字典树
-        public void reversedInsert(String s) {
-            Tire curPos = this; // 使每次调用方法时，都从树的头节点开始
-            for (int i = s.length() - 1; i >= 0; i--) {
-                int t = s.charAt(i) - 'a';
-                if (curPos.next[t] == null) {
-                    curPos.next[t] = new Tire();
-                }
-                curPos = curPos.next[t];
-            }
-            curPos.isEnd = true;
-        }
-
+        System.out.println(p);  // 输出结果为0，而不是10
     }
 
 
